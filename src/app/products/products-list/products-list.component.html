@@ -1,0 +1,81 @@
+<div class="row mt-4">
+    <div class="col">
+        <h2>Listagem de Produtos</h2>
+    </div>
+</div>
+
+<form [formGroup]="form">
+    <div class="row mt-2">
+        <div class="col-lg-2">
+            <mat-form-field>
+                <mat-label>código</mat-label>
+                <input matInput formControlName="productCode">
+            </mat-form-field>
+        </div>
+    
+        <div class="col-lg-2">
+            <mat-form-field>
+                <mat-label>categoria</mat-label>
+                <mat-select formControlName="productType">
+                    <mat-option *ngFor="let product of productTypes" [value]="product">
+                        {{ product }}
+                    </mat-option>
+                    <mat-option value="">Todos</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div class="col-lg-2">
+            <button mat-raised-button (click)="filterList()" color="primary" aria-label="filtrar">filtrar</button>
+        </div>
+    </div>
+</form>
+
+<ng-container *ngIf="filteredProductList.length; else empty">
+    <div class="row mt-2">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+                <ng-container matColumnDef="codigo">
+                    <mat-header-cell *matHeaderCellDef> Código </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+                </ng-container>
+    
+                <ng-container matColumnDef="nome">
+                    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                </ng-container>
+        
+                <ng-container matColumnDef="categoria">
+                    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+                </ng-container>
+        
+                <ng-container matColumnDef="editar">
+                    <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> <mat-icon (click)="openDialog(element)" class="item">edit</mat-icon> </mat-cell>
+                </ng-container>
+        
+                <ng-container matColumnDef="deletar">
+                    <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> <mat-icon (click)="openConfirmationDialog(element)" class="item">delete</mat-icon> </mat-cell>
+                </ng-container>
+        
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </table>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-template #empty>
+    <p>Não foram encontrados produtos para listagem</p>
+</ng-template>
+
+
+<div class="row mt-4">
+    <div class="col">
+        <button mat-raised-button (click)="openDialog()" color="primary" aria-label="adicionar">adicionar</button>
+    </div>
+</div>

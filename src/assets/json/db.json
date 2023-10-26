@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "331c7c94-a85a-4d00-b295-f27cc3718867",
+      "code": "V1",
+      "name": "Produto varejo 1",
+      "type": "Varejo"
+    },
+    {
+      "id": "39af2d32-5618-451a-8b16-8d18fa8630f6",
+      "code": "V2",
+      "name": "Produto varejo 2",
+      "type": "Varejo"
+    },
+    {
+      "id": "62543e4e-dbf7-4150-931d-75bb581c1e07",
+      "code": "A1",
+      "name": "Produto atacado 1",
+      "type": "Atacado"
+    },
+    {
+      "id": "896c3f31-5e97-4f33-a3e4-f630c9f8338b",
+      "code": "A2",
+      "name": "Produto atacado 2",
+      "type": "Atacado"
+    },
+    {
+      "id": "994dab60-e91f-40ec-ad5b-1dfc74dd4b21",
+      "code": "I1",
+      "name": "Produto internacional 1",
+      "type": "Internacional"
+    },
+    {
+      "id": "42023bbd-52d8-4dda-b810-abb89b5eca13",
+      "code": "I2",
+      "name": "Produto internacional 2",
+      "type": "Internacional"
+    }
+  ]
+}

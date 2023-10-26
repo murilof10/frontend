@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="col">
+        <div class="row">
+            <mat-toolbar color="primary">
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>menu</mat-icon>
+                </button>
+    
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['/']">
+                        <mat-icon>home</mat-icon>
+                        <span>Home</span>
+                    </button>
+    
+                    <button mat-menu-item [routerLink]="['/products']">
+                        <mat-icon>list</mat-icon>
+                        <span>Listagem de produtos</span>
+                    </button>
+                </mat-menu>
+    
+                <h1> {{title | uppercase}} </h1>
+            </mat-toolbar>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-12">
+            <h2>Formulário de produtos</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <input required matInput placeholder="Código" formControlName="code" class="form-control" id="id-code">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="form-group">
+                        <input required matInput placeholder="Nome" formControlName="name" class="form-control" id="id-name">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>Categoria</mat-label>
+                            <mat-select formControlName="type">
+                                <mat-option *ngFor="let product of productType" [value]="product">
+                                    {{ product }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="row mt-2">
+        <div class="col-lg-3">
+            <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="checkProduct()">Adicionar</button>
+        </div>
+    
+        <div class="col-lg-3">
+            <button mat-raised-button mat-dialog-close class="ml-2">Cancelar</button>
+        </div>
+    </div>    
+</div>

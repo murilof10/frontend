@@ -16,16 +16,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Serviço que simula localmente uma API para consumo. Usa como base o arquivo `db.json` da aplicação.
 
 * Execute o comando `npm install -g json-server` para instalar o pacote npm da API.
-* Execute o comando `json-server --id code --watch db.json` na pasta do arquivo db.json para iniciar a API com os dados do arquivo.
+* Execute o comando `json-server --watch db.json` na pasta do arquivo db.json (assets/json) para iniciar a API com os dados do arquivo.
 
 ## Acessando a aplicação
 
-* Após as configurações do ambiente local, a aplicação fica disponível pelo navegador através da URL `http://localhost:4200`
+* Instale as dependências do projeto com o comando `npm install`.
+* Após as configurações do ambiente local `ng serve`, a aplicação fica disponível pelo navegador através da URL `http://localhost:4200`
 * Os recursos de API consumidos do JSON server rodam no `http://localhost:3000/`
 
 ## Teste unitário Angular
 
 Caso deseje executar os testes unitários da aplicação.
 
-* Instale as dependências do projeto com o comando `npm install`.
-* Execute o comando `npm run test` para executar os testes via [Karma](https://karma-runner.github.io).
+* Execute o comando `ng test` para executar os testes via [Karma](https://karma-runner.github.io).

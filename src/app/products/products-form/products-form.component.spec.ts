@@ -18,7 +18,7 @@ describe('ProductsFormComponent', () => {
       imports: [SharedModule, ReactiveFormsModule, BrowserAnimationsModule],
       declarations: [ProductsFormComponent],
       providers: [
-        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {list: []} },
         { provide: MatDialogRef, useValue: mockDialogRef },
       ],
     });
